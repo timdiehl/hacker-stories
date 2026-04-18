@@ -53,6 +53,8 @@ const storiesReducer = (state, action) => {
     }
 };
 
+const [searchTerm, setSearchTerm] = useStorageState('search', 'React');
+
 const [url, setUrl] = React.useState(
     `${API_ENDPOINT}${searchTerm}`
 );
@@ -62,7 +64,6 @@ const searchAction = () => {
     //event.preventDefault();
 };
 
-const [searchTerm, setSearchTerm] = useStorageState('search', 'React');
 
 const SearchForm = ({ searchTerm, onSearchInput, searchAction,}) => (
     <form action={searchAction}>
