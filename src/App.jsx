@@ -53,18 +53,6 @@ const storiesReducer = (state, action) => {
     }
 };
 
-const [searchTerm, setSearchTerm] = useStorageState('search', 'React');
-
-const [url, setUrl] = React.useState(
-    `${API_ENDPOINT}${searchTerm}`
-);
-
-const searchAction = () => {
-    setUrl(`${API_ENDPOINT}${searchTerm}`);
-    //event.preventDefault();
-};
-
-
 const SearchForm = ({ searchTerm, onSearchInput, searchAction,}) => (
     <form action={searchAction}>
         <InputWithLabel
@@ -92,6 +80,18 @@ function App() {
         storiesReducer,
         { data: [], isLoading: false, isError: false }
     );
+
+
+    const [searchTerm, setSearchTerm] = useStorageState('search', 'React');
+
+    const [url, setUrl] = React.useState(
+        `${API_ENDPOINT}${searchTerm}`
+    );
+
+    const searchAction = () => {
+        setUrl(`${API_ENDPOINT}${searchTerm}`);
+        //event.preventDefault();
+    };
 
 
 
@@ -134,12 +134,12 @@ function App() {
     };
 
 
-    const handleSearch = (event) => {
-        console.log('handleSearch:')
-        console.log(event.target.value);
-        setSearchTerm(event.target.value);
+   // const handleSearch = (event) => {
+    //    console.log('handleSearch:')
+    //    console.log(event.target.value);
+    //    setSearchTerm(event.target.value);
 
-    };
+    //};
 
   return (
       <div>
