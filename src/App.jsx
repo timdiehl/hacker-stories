@@ -166,7 +166,7 @@ function App() {
   );
 }
 
-const InputWithLabel = ({ id, label, value, type = 'text', onInputChange, children, }) => (
+const InputWithLabel = ({ id, value, type = 'text', onInputChange, children, }) => (
 <>
     <label htmlFor={id}>{children}: </label>
     &nbsp;
@@ -178,7 +178,7 @@ const InputWithLabel = ({ id, label, value, type = 'text', onInputChange, childr
     />
 </>
 );
-
+/*
 const Search = ( {search, onSearch} ) => {
 
     console.log('Search renders');
@@ -198,7 +198,7 @@ const Search = ( {search, onSearch} ) => {
         </>
     );
 }
-
+*/
 
 const List = ({ list, onRemoveItem }) => (
         <ul>
